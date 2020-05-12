@@ -65,6 +65,10 @@ const server = new ApolloServer({ typeDefs, resolvers })
 
 const app = express();
 
+app.get('/', function(req, res){
+  res.redirect('/todo');
+});
+
 app.use(express.static(__dirname + "/dist"));
 
 server.applyMiddleware({ app });
