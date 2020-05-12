@@ -1,21 +1,47 @@
 const express = require('express');
 const { ApolloServer, gql } = require('apollo-server-express');
+// this is our dummy database
+const questions = require("./data/questions.json")
+
 
 const typeDefs = gql `
+
+   type Question {
+     question: String!
+     answer1: String!
+     answer2: String!
+     answer3: String!
+     answer4: String!
+     answer5: String!
+     correctAnswer: String!
+   }
+
    type Query {
-    hello: String
+    name: String
+    questions: [Question]
   } 
 `;
 
+// right here
+
 const resolvers = {
   Query:  {
-    hello: () => 'Hellllllo world!',
+    name: () => 'Garrett',
+    questions: () => {
+      // we need to get the questions from somewhere
+      // and offer them as tribute to the GraphQL god
+      // in the proper shape
+      return questions;
+    }
   },
 }; 
 
 const server = new ApolloServer({ typeDefs, resolvers })
 
 const app = express();
+
+app.use(express.static(__dirname + "/dist"));
+
 server.applyMiddleware({ app });
 
 app.listen({ port: 4000 }, () =>
@@ -23,29 +49,3 @@ app.listen({ port: 4000 }, () =>
 );
 
 
-/* const bodyParser = require('body-parser');
-const cors = require('cors');
-const express = require('express');
-const db = require('./db');
-
-const port = process.env.PORT || 9000;
-const app = express();
-
-const fs = require('fs')
-const typeDefs = fs.readFileSync('./schema.graphql',{encoding:'utf-8'})
-const resolvers = require('./resolvers')
-
-const {makeExecutableSchema} = require('graphql-tools')
-const schema = makeExecutableSchema({typeDefs, resolvers})
-
-app.use(cors(), bodyParser.json());
-
-const  {graphiqlExpress,graphqlExpress} = require('apollo-server-express')
-app.use('/graphql',graphqlExpress({schema}))
-app.use('/graphiql',graphiqlExpress({endpointURL:'/graphql'}))
-
-app.listen(
-   port, () => console.info(
-      `Server started on port ${port}`
-   )
-); */
