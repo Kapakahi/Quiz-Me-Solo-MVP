@@ -1,7 +1,16 @@
 <template>
   <div class="take">
     <h1 class = title>Take a Quiz</h1>
-    <button  v-for="question in questions" v-bind:key="question.id"  class="button" @click="toggleMakeQuizPage">{{question.question}}</button> 
+    <button  
+      v-for="question in questions" 
+      v-bind:key="question.id"  
+      class="button" @click="toggleMakeQuizPage">
+      1 {{question.question}}
+      {{question.answer1}}
+      {{question.answer2}}
+      {{question.answer3}}
+      {{question.answer4}}
+    </button> 
   </div>
 </template>
 

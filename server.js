@@ -8,7 +8,7 @@ const questions = require("./data/questions.json")
 const typeDefs = gql `
 
 
-   type Question {
+  type Question {
      id: Int
      question: String!
      answer1: String!
@@ -16,12 +16,25 @@ const typeDefs = gql `
      answer3: String!
      answer4: String!
      correctAnswer: String!
-   }
+  }
 
-   type Query {
+  type Query {
     name: String
     questions: [Question]
   } 
+
+  input newQuestion {
+     question: String!
+     answer1: String!
+     answer2: String!
+     answer3: String!
+     answer4: String!
+     correctAnswer: String!
+    }
+
+  type Mutation {
+     createQuestion(input: newQuestion): Question 
+  }  
 `;
 
 // right here
@@ -36,7 +49,17 @@ const resolvers = {
       return questions;
     }
   },
+
+  Mutation: {
+      createQuestion: (request) => {
+        const newQuestion = request.question;
+        data.push(newQuestion)
+        return newQuestion
+      }
+  }
 }; 
+
+
 
 const server = new ApolloServer({ typeDefs, resolvers })
 
