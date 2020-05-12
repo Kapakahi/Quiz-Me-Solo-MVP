@@ -1,32 +1,48 @@
 [
   {
      "id": "1",
-     "question":"How are you?",
-     "answer1":"fine",
-     "answer2": "happy",
-     "answer3": "sad",
-     "answer4": "great",
-     "answer5": "sleepy",
-     "correctAnswer": "answer3"
+     "question":"What is the color of Donald Duck's bowtie?",
+     "answer1": "Red",
+     "answer2": "Yellow",
+     "answer3": "Blue",
+     "answer4": "White",
+     "correctAnswer": "answer1"
   },
   {
     "id": "2",
-    "question":"What are you?",
-    "answer1":"fake answer 1",
-    "answer2": "fake answer 2",
-    "answer3": "fake answer 3",
-    "answer4": "fake answer 4",
-    "answer5": "fake answer 5",
-    "correctAnswer": "answer 2"
+    "question":"What was the name of the band Lionel Richie was a part of?",
+    "answer1": "King Harvest",
+    "answer2": "Spectrums",
+    "answer3": "Commodores",
+    "answer4": "The Marshall Tucker Band",
+    "correctAnswer": "answer3"
   },
   {
-    "id": "1",
-    "question":"Genki?",
-    "answer1":"yes",
-    "answer2": "no",
-    "answer3": "i dont know",
-    "answer4": "maybe",
-    "answer5": "hell yeah",
-    "correctAnswer": "answer5"
+    "id": "3",
+    "question":"What planet is the hottest?",
+    "answer1": "Venus",
+    "answer2": "Saturn",
+    "answer3": "Mercury",
+    "answer4": "Mars",
+    "correctAnswer": "answer1"
+  },
+  {
+    "id": "4",
+    "question":"What is the rarest blood type?",
+    "answer1": "O",
+    "answer2": "A",
+    "answer3": "B",
+    "answer4": "AB-Negative",
+    "correctAnswer": "answer4"
+  },
+
+  {
+    "id": "5",
+    "question":"How many bones are there in the human body?",
+    "answer1": "206",
+    "answer2": "205",
+    "answer3": "201",
+    "answer4": "209",
+    "correctAnswer": "answer1"
   }
 ]

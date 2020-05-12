@@ -4,15 +4,17 @@ const { ApolloServer, gql } = require('apollo-server-express');
 const questions = require("./data/questions.json")
 
 
+
 const typeDefs = gql `
 
+
    type Question {
+     id: Int
      question: String!
      answer1: String!
      answer2: String!
      answer3: String!
      answer4: String!
-     answer5: String!
      correctAnswer: String!
    }
 
