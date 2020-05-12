@@ -9,7 +9,7 @@
     <TakeQuizPage
       v-if="showTakeQuiz"
     />  
-     <button  v-for="question in questions" v-bind:key="question.id"  class="button" @click="toggleMakeQuizPage">{{question.question}}</button> 
+    
   </div>
 </template>
 
@@ -32,9 +32,7 @@ export default {
       questions: []
     };
   },
-  created () {
-    this.getQuestions();
-  },
+
   methods: {
     toggleMakeQuizPage() {
       this.showMakeQuiz = !this.showMakeQuiz
@@ -44,21 +42,6 @@ export default {
       this.showTakeQuiz = !this.showTakeQuiz;
       this.showWelcomePage = !this.showWelcomePage;
     },
-    getQuestions() {
-      // fetching data from my server
-      fetch('/graphql', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query: '{ questions { question answer1 answer2 answer3 answer4 correctAnswer } }' }),
-})
-
-      
-  .then(res => res.json())
-  .then(jsonedRes => {
-    console.log(jsonedRes.data, "!!!!!!!");
-    this.questions = jsonedRes.data.questions;
-  });
-    }
   }
 }
 </script>
