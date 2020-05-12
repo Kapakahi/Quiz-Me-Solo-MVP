@@ -5,7 +5,7 @@
       v-for="question in questions" 
       v-bind:key="question.id"  
       class="button" @click="toggleMakeQuizPage">
-      1 {{question.question}}
+      {{question.question}}
       {{question.answer1}}
       {{question.answer2}}
       {{question.answer3}}
@@ -50,5 +50,25 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+.button {
+  display: flex;
+  background-color: rgb(58, 209, 202);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: transparent;
+  border: 2px solid rgb(58, 209, 202);
+  color: rgb(58, 209, 202)
+}
 
 </style>
