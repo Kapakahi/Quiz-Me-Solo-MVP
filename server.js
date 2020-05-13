@@ -72,8 +72,9 @@ app.use(express.static(__dirname + "/dist"));
 server.applyMiddleware({ app });
 
 const port = process.env.PORT || 4000
-app.listen({ port: 4000 }, () =>
+app.listen(port, () => {
+// app.listen({ port: 4000 }, () =>
   console.log('Now browse tooooo http://localhost:4000' + server.graphqlPath)
-);
+});
 
 
