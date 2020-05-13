@@ -7,7 +7,7 @@
       class="button" @click="toggleMakeQuizPage">
       {{question.question}}
       <button @click="updateUserAnswer(question.answer1), 
-        checkUserAnswer(question.correctAnswer)" 
+        checkUserAnswer(question.correctAnswer), console.log(data(), DATAAAAA)" 
         class="answerButton"> 
         {{question.answer1}}
       </button>
@@ -27,6 +27,7 @@
         {{question.answer4}}
       </button>
     </button> 
+    <div class="result">Your score is:  {{totalQuestionsAnswered  }} /  {{numCorrect}}</div>
   </div>
 </template>
 
@@ -41,7 +42,9 @@ export default {
   },  
   data() {
     return {
-      questions: []
+      questions: [],
+      numCorrect: 0,
+    totalQuestionsAnswered: 0
     };
   },
   methods: { 
@@ -63,16 +66,24 @@ export default {
       //console.log(answer, "answereerrrrrr")
     },
     checkUserAnswer(realAnswer) {
-      console.log(this.userAnswer, "userANSWERRRRRRRR")
-      console.log(realAnswer, "REALLL ANSEWERERERER")
+     // console.log(this.userAnswer, "userANSWERRRRRRRR")
+      //console.log(realAnswer, "REALLL ANSEWERERERER")
       if (this.userAnswer === realAnswer) {
-            console.log("correct!!!!!")
+          console.log("Yes, that's correct!!!")
+         
+          this.numCorrect = this.numCorrect + 1;
+          this.totalQuestionsAnswered = this.totalQuestionsAnswered + 1;
+      } else {
+          console.log("You chose " + `"${this.userAnswer}"` +", I'm sorry, that's incorrect...")
+          return this.totalQuestionsAnswered = this.totalQuestionsAnswered + 1;
       }
 
     }
   },
   state: {
-    userAnswer: ""
+    userAnswer: "",
+    numCorrect: 0,
+    totalQuestionsAnswered: 0
   }
 }  
 
