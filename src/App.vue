@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Welcome />
-    <button class="button" @click="toggleMakeQuizPage">Make a quizzzzz</button>
-    <button class="button" @click="toggleTakeQuizPage">Take a quizzzzz</button>
+    <button class="button" @click="toggleMakeQuizPage">Make a quiz</button>
+    <button class="button" @click="toggleTakeQuizPage">Take a quiz</button>
     <MakeQuizPage 
       v-if="showMakeQuiz"
      />

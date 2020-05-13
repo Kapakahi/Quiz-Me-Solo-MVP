@@ -6,10 +6,10 @@
       v-bind:key="question.id"  
       class="button" @click="toggleMakeQuizPage">
       {{question.question}}
-      {{question.answer1}}
-      {{question.answer2}}
-      {{question.answer3}}
-      {{question.answer4}}
+      <button class="answerButton"> {{question.answer1}}</button>
+      <button class="answerButton">{{question.answer2}}</button>
+      <button class="answerButton">{{question.answer3}}</button>
+      <button class="answerButton">{{question.answer4}}</button>
     </button> 
   </div>
 </template>
@@ -42,6 +42,9 @@ export default {
     this.questions = jsonedRes.data.questions;
   });
     }
+  },
+  state: {
+    usernswer: ""
   }
 }  
 
@@ -69,6 +72,11 @@ export default {
   background-color: transparent;
   border: 2px solid rgb(58, 209, 202);
   color: rgb(58, 209, 202)
+}
+
+.answerButton {
+  margin-right: 3px;
+  margin-left: 2px;
 }
 
 </style>
