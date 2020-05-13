@@ -6,10 +6,26 @@
       v-bind:key="question.id"  
       class="button" @click="toggleMakeQuizPage">
       {{question.question}}
-      <button class="answerButton"> {{question.answer1}}</button>
-      <button class="answerButton">{{question.answer2}}</button>
-      <button class="answerButton">{{question.answer3}}</button>
-      <button class="answerButton">{{question.answer4}}</button>
+      <button @click="updateUserAnswer(question.answer1), 
+        checkUserAnswer(question.correctAnswer)" 
+        class="answerButton"> 
+        {{question.answer1}}
+      </button>
+      <button @click="updateUserAnswer(question.answer2), 
+        checkUserAnswer(question.correctAnswer)" 
+        class="answerButton">
+        {{question.answer2}}
+      </button>
+      <button @click="updateUserAnswer(question.answer3), 
+        checkUserAnswer(question.correctAnswer)" 
+        class="answerButton">
+        {{question.answer3}}
+      </button>
+      <button @click="updateUserAnswer(question.answer4), 
+        checkUserAnswer(question.correctAnswer)" 
+        class="answerButton">
+        {{question.answer4}}
+      </button>
     </button> 
   </div>
 </template>
@@ -41,10 +57,22 @@ export default {
     console.log(jsonedRes.data, "!!!!!!!");
     this.questions = jsonedRes.data.questions;
   });
+    },
+    updateUserAnswer(answer) {
+      this.userAnswer = answer
+      //console.log(answer, "answereerrrrrr")
+    },
+    checkUserAnswer(realAnswer) {
+      console.log(this.userAnswer, "userANSWERRRRRRRR")
+      console.log(realAnswer, "REALLL ANSEWERERERER")
+      if (this.userAnswer === realAnswer) {
+            console.log("correct!!!!!")
+      }
+
     }
   },
   state: {
-    usernswer: ""
+    userAnswer: ""
   }
 }  
 

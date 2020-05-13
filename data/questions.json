@@ -6,7 +6,7 @@
      "answer2": "Yellow",
      "answer3": "Blue",
      "answer4": "White",
-     "correctAnswer": "answer1"
+     "correctAnswer": "Red"
   },
   {
     "id": "2",
@@ -15,7 +15,7 @@
     "answer2": "Spectrums",
     "answer3": "Commodores",
     "answer4": "The Marshall Tucker Band",
-    "correctAnswer": "answer3"
+    "correctAnswer": "Commodores"
   },
   {
     "id": "3",
@@ -24,7 +24,7 @@
     "answer2": "Saturn",
     "answer3": "Mercury",
     "answer4": "Mars",
-    "correctAnswer": "answer1"
+    "correctAnswer": "Venus"
   },
   {
     "id": "4",
@@ -33,7 +33,7 @@
     "answer2": "A",
     "answer3": "B",
     "answer4": "AB-Negative",
-    "correctAnswer": "answer4"
+    "correctAnswer": "AB-Negative"
   },
 
   {
